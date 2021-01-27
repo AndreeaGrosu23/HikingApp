@@ -14,7 +14,7 @@ export class HikesController {
   constructor(private readonly hikesService: HikesService) {}
 
   @Post()
-  addHike(
+  async addHike(
     @Body('title') hikeTitle: string,
     @Body('description') hikeDescription: string,
     @Body('difficulty') hikeDifficulty: string,
@@ -23,7 +23,7 @@ export class HikesController {
     @Body('trail_type') hikeTrailType: string,
     @Body('image') hikeImage: string,
   ) {
-    const generatedId = this.hikesService.insertHike(
+    const generatedId = await this.hikesService.insertHike(
       hikeTitle,
       hikeDescription,
       hikeDifficulty,
@@ -36,8 +36,9 @@ export class HikesController {
   }
 
   @Get()
-  getAllHikes() {
-    return this.hikesService.getHikes();
+  async getAllHikes() {
+    const hikes = await this.hikesService.getHikes();
+    return hikes;
   }
 
   @Get(':id')
@@ -46,7 +47,7 @@ export class HikesController {
   }
 
   @Patch(':id')
-  updateHike(
+  async updateHike(
     @Param('id') hikeId: string,
     @Body('title') title: string,
     @Body('description') description: string,
@@ -56,7 +57,7 @@ export class HikesController {
     @Body('trail_type') trail_type: string,
     @Body('image') image: string,
   ) {
-    this.hikesService.updateHike(
+    await this.hikesService.updateHike(
       hikeId,
       title,
       description,
@@ -70,8 +71,8 @@ export class HikesController {
   }
 
   @Delete(':id')
-  deleteHike(@Param('id') hikeId: string) {
-    this.hikesService.deleteHike(hikeId);
+  async deleteHike(@Param('id') hikeId: string) {
+    await this.hikesService.deleteHike(hikeId);
     return null;
   }
 }
