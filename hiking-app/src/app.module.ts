@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -7,10 +8,15 @@ import { HikesModule } from './hikes/hikes.module';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({isGlobal: true}),
     HikesModule,
-    MongooseModule.forRoot(
-      'mongodb+srv://andreea23:hiking@hikingapp.axz53.mongodb.net/hikingApp?retryWrites=true&w=majority',
-    ),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        uri: configService.get<string>('MONGODB_URL'),
+      }),
+      inject: [ConfigService],
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
