@@ -6,20 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HikesModule = void 0;
+exports.UserModule = void 0;
 const common_1 = require("@nestjs/common");
+const user_service_1 = require("./service/user.service");
+const user_controller_1 = require("./controller/user.controller");
 const mongoose_1 = require("@nestjs/mongoose");
-const hikes_controller_1 = require("./hikes.controller");
-const hikes_service_1 = require("./hikes.service");
-const hike_model_1 = require("./hike.model");
-let HikesModule = class HikesModule {
+const user_model_1 = require("./models/user.model");
+let UserModule = class UserModule {
 };
-HikesModule = __decorate([
+UserModule = __decorate([
     common_1.Module({
-        imports: [mongoose_1.MongooseModule.forFeature([{ name: 'hikes', schema: hike_model_1.HikeSchema }])],
-        controllers: [hikes_controller_1.HikesController],
-        providers: [hikes_service_1.HikesService],
+        imports: [mongoose_1.MongooseModule.forFeature([{ name: 'users', schema: user_model_1.UserSchema }])],
+        providers: [user_service_1.UserService],
+        controllers: [user_controller_1.UserController]
     })
-], HikesModule);
-exports.HikesModule = HikesModule;
-//# sourceMappingURL=hikes.module.js.map
+], UserModule);
+exports.UserModule = UserModule;
+//# sourceMappingURL=user.module.js.map

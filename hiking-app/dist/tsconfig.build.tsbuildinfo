@@ -1607,7 +1607,7 @@
         "affectsGlobalScope": false
       },
       "../src/hikes/hikes.service.ts": {
-        "version": "a761c194a6e3efebd208413684d672be5dc0d4b41d5b942ea5b2181b82fd8a32",
+        "version": "6e3527f371e3b063f04e1a9f6906ab6296c2eb4fc7cfed7d6bb794b43ddb62d7",
         "signature": "b9b6c660534ae13ec7c2ed7f8093045b07c5533af1ede207e3708bd89b116e21",
         "affectsGlobalScope": false
       },
@@ -1617,12 +1617,32 @@
         "affectsGlobalScope": false
       },
       "../src/hikes/hikes.module.ts": {
-        "version": "ed0538a295a701fa6ff125690a36f0536be1871fb64e8465c1a0e21be4e93dc5",
+        "version": "ed136b05a126b76939ee86a796dd78dd734f9523dde2337f2be8b6b57d033072",
         "signature": "2b6da8ad931a11a8125901ef929702e223ad5c568bc3b6707c11c51df12489bc",
         "affectsGlobalScope": false
       },
+      "../src/user/models/user.model.ts": {
+        "version": "092643414154dc6659303c8c0818a1325e54f215588a465ba265fa626ea2b4a3",
+        "signature": "a5e6f9589ea15e753cce69b699f5fa6e67f10edbf7a8516ebd701ec041640940",
+        "affectsGlobalScope": false
+      },
+      "../src/user/service/user.service.ts": {
+        "version": "e01428877e414f6fc33153dfc6c1515de185810890caf3a7305bcff722128a32",
+        "signature": "b5d645239b406d6dfb38bb58d4b5ab2d6317c70d8e1bf807c231c3b959766d16",
+        "affectsGlobalScope": false
+      },
+      "../src/user/controller/user.controller.ts": {
+        "version": "fd5b355fbf40015382abfe36b12fab16144752e5705bbd3f7599037eede76dda",
+        "signature": "91f116b0183cc1387e7d6ed216ff4a34a8ffeac67547f053e93a494041079fad",
+        "affectsGlobalScope": false
+      },
+      "../src/user/user.module.ts": {
+        "version": "8851fd75b477ff1eafcda3fd8e4bf5745d65a2fecfc28b91c998c9459806e146",
+        "signature": "482b8f0d35a3d453500a15b6c6057c1e4c40baa4329b39da9e1026d8e1de4329",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "5751327e0a3c849b69ec7a01938804dd122dc25f9c333d1ecccab18d9be0d258",
+        "version": "d044e7c43ad0e56c1949a04af6005accbf04d2972176f8fd65436fdcfb78cd4c",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -3541,7 +3561,8 @@
         "../node_modules/@nestjs/mongoose/index.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
-        "../src/hikes/hikes.module.ts"
+        "../src/hikes/hikes.module.ts",
+        "../src/user/user.module.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -3569,6 +3590,29 @@
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
         "../src/app.module.ts"
+      ],
+      "../src/user/controller/user.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/rxjs/index.d.ts",
+        "../src/user/models/user.model.ts",
+        "../src/user/service/user.service.ts"
+      ],
+      "../src/user/models/user.model.ts": [
+        "../node_modules/mongoose/index.d.ts"
+      ],
+      "../src/user/service/user.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/mongoose/index.d.ts",
+        "../node_modules/mongoose/index.d.ts",
+        "../node_modules/rxjs/index.d.ts",
+        "../src/user/models/user.model.ts"
+      ],
+      "../src/user/user.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/mongoose/index.d.ts",
+        "../src/user/controller/user.controller.ts",
+        "../src/user/models/user.model.ts",
+        "../src/user/service/user.service.ts"
       ]
     },
     "exportedModulesMap": {
@@ -4978,6 +5022,19 @@
       "../src/hikes/hikes.service.ts": [
         "../node_modules/mongoose/index.d.ts",
         "../src/hikes/hike.model.ts"
+      ],
+      "../src/user/controller/user.controller.ts": [
+        "../node_modules/rxjs/index.d.ts",
+        "../src/user/models/user.model.ts",
+        "../src/user/service/user.service.ts"
+      ],
+      "../src/user/models/user.model.ts": [
+        "../node_modules/mongoose/index.d.ts"
+      ],
+      "../src/user/service/user.service.ts": [
+        "../node_modules/mongoose/index.d.ts",
+        "../node_modules/rxjs/index.d.ts",
+        "../src/user/models/user.model.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -5404,7 +5461,11 @@
       "../src/hikes/hikes.controller.ts",
       "../src/hikes/hikes.module.ts",
       "../src/hikes/hikes.service.ts",
-      "../src/main.ts"
+      "../src/main.ts",
+      "../src/user/controller/user.controller.ts",
+      "../src/user/models/user.model.ts",
+      "../src/user/service/user.service.ts",
+      "../src/user/user.module.ts"
     ]
   },
   "version": "4.1.3"

@@ -6,7 +6,7 @@ import { Hike } from './hike.model';
 
 @Injectable()
 export class HikesService {
-  constructor(@InjectModel('Hike') private readonly hikeModel: Model<Hike>) {}
+  constructor(@InjectModel('hikes') private readonly hikeModel: Model<Hike>) {}
 
   async insertHike(
     title: string,
