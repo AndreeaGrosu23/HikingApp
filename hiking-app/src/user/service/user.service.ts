@@ -17,14 +17,16 @@ export class UserService {
             name: user.name,
             username: user.username,
             email: user.email.toLowerCase(),
-            password: passwordHash
+            password: passwordHash,
+            role: user.role
         });
         const userDb = await newUser.save();
         const result = {
             id: userDb.id,
             name: userDb.name,
             username: userDb.username,
-            email: userDb.email
+            email: userDb.email,
+            role: userDb.role
         };
         return result;
     }
@@ -35,7 +37,8 @@ export class UserService {
             id: user.id,
             name: user.name,
             username: user.username,
-            email: user.email
+            email: user.email,
+            role: user.role
         }));
     }
 
@@ -48,7 +51,8 @@ export class UserService {
                 id: userDb.id,
                 name: userDb.name,
                 username: userDb.username,
-                email: userDb.email
+                email: userDb.email,
+                role: userDb.role
             };            
         } catch (error) {
             throw new NotFoundException('Could not find user');
@@ -64,22 +68,23 @@ export class UserService {
         try {
             result = await this.userModel.deleteOne({ _id: id }).exec();
         } catch (error) {
-            throw new NotFoundException('Could not find hike');
+            throw new NotFoundException('Could not find user');
         }
         if (result.n === 0) {
-            throw new NotFoundException('Could not find hike');
+            throw new NotFoundException('Could not find user');
         }
     }
 
-    async updateOne(id:number, user:User): Promise<any> {
+    async updateOne(id:string, user:User): Promise<any> {
         delete user.email;
         delete user.password;
-        const userDb = await this.userModel.findByIdAndUpdate({_id: id}, user);
+        const userDb = await this.userModel.findByIdAndUpdate(id, user);
         const result = {
             id: userDb.id,
             name: userDb.name,
             username: userDb.username,
-            email: userDb.email
+            email: userDb.email,
+            role: userDb.role
         };
         return result;
     }
@@ -106,5 +111,11 @@ export class UserService {
 
     async findByMail(email: string): Promise<User> {
         return await this.userModel.findOne({email});
+    }
+
+    async updateRoleOfUser(id: string, user: User): Promise<User> {
+        delete user.email;
+        delete user.password;
+        return await this.userModel.findByIdAndUpdate(id, user);
     }
 }

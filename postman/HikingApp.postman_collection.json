@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "localhost:3000/hikes",
+			"name": "Add hike",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -34,7 +34,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/hikes",
+			"name": "Get all hikes",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -53,7 +53,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/hikes/6013c4107d81cd91374b2cb5",
+			"name": "Get one hike by id",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -73,7 +73,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/hikes/6013c3fe7d81cd91374b2cb4",
+			"name": "Edit hike",
 			"request": {
 				"method": "PATCH",
 				"header": [],
@@ -102,7 +102,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/hikes/475487",
+			"name": "Delete one hike by id",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -122,7 +122,34 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/users",
+			"name": "Add user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Hans\",\n    \"username\": \"hans23\",\n    \"email\": \"hans@gmail.com\",\n    \"password\": \"0987\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -141,7 +168,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/users/60242cac9cd5d4084f7523aa",
+			"name": "Get one user by id",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -161,7 +188,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/users/60242cac9cd5d4084f7523aa",
+			"name": "Delete one user by id",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -181,7 +208,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/users/60242cac9cd5d4084f7523aa",
+			"name": "Edit user",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -210,7 +237,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/users/login",
+			"name": "Login",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -238,13 +265,23 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/users",
+			"name": "Update role",
 			"request": {
-				"method": "POST",
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiamFuZUBnbWFpbC5jb20ifSwiaWF0IjoxNjEzMDc5MDQ1LCJleHAiOjE2MTMwODkwNDV9.nHmRsDbgakaHCdhtK58m-Ypmhu9hjL4IoTfYf9MdxuI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Hans\",\n    \"username\": \"hans23\",\n    \"email\": \"hans@gmail.com\",\n    \"password\": \"0987\"\n}",
+					"raw": "{\n    \"role\": \"admin\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -252,13 +289,15 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/users",
+					"raw": "localhost:3000/users/6025a1fd0bfd2c4eb5e4b55c/role",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"users"
+						"users",
+						"6025a1fd0bfd2c4eb5e4b55c",
+						"role"
 					]
 				}
 			},
