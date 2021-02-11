@@ -8,28 +8,34 @@ export class UserController {
     constructor(private userService: UserService) {}
 
     @Post()
-    create(@Body() user: User): Observable<User> {
-        return this.userService.create(user);
+    async create(@Body() user: User): Promise<any> {
+        return await this.userService.create(user);
+    }
+
+    @Post('login')
+    async login(@Body() user: User): Promise<Object> {
+        const jwt = await this.userService.login(user);
+        return { access_token: jwt };
     }
 
     @Get()
-    findAll(): Observable<User[]> {
-        return this.userService.findAll();
+    async findAll() {
+        return await this.userService.findAll();
     }
 
     @Get(':id')
-    findOne(@Param() params): Observable<User> {
-        return this.userService.findOne(params.id);
+    async findOne(@Param() params) {
+        return await this.userService.findOne(params.id);
     }
 
     @Delete(':id')
-    deleteOne(@Param('id') id: number): Observable<any> {
-        return this.userService.deleteOne(id);
+    async deleteOne(@Param('id') id: number): Promise<any> {
+        return await this.userService.deleteOne(id);
     }
 
     @Put(':id')
-    updateOne(@Param('id') id: number, @Body() user: User): Observable<any> {
-        return this.userService.updateOne(id, user);
+    async updateOne(@Param('id') id: number, @Body() user: User): Promise<any> {
+        return await this.userService.updateOne(id, user);
     }
 
 }

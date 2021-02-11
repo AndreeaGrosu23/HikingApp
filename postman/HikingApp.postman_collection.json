@@ -124,34 +124,6 @@
 		{
 			"name": "localhost:3000/users",
 			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Andreea\",\n    \"username\": \"ACGrosu23\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:3000/users",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users"
-					]
-				},
-				"description": "Create user"
-			},
-			"response": []
-		},
-		{
-			"name": "localhost:3000/users",
-			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -234,6 +206,61 @@
 					]
 				},
 				"description": "Update user by id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"hans@gmail.com\",\n    \"password\": \"0987\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Hans\",\n    \"username\": \"hans23\",\n    \"email\": \"hans@gmail.com\",\n    \"password\": \"0987\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
 			},
 			"response": []
 		}

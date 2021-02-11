@@ -14,26 +14,29 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
-const rxjs_1 = require("rxjs");
 const user_service_1 = require("../service/user.service");
 let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
     }
-    create(user) {
-        return this.userService.create(user);
+    async create(user) {
+        return await this.userService.create(user);
     }
-    findAll() {
-        return this.userService.findAll();
+    async login(user) {
+        const jwt = await this.userService.login(user);
+        return { access_token: jwt };
     }
-    findOne(params) {
-        return this.userService.findOne(params.id);
+    async findAll() {
+        return await this.userService.findAll();
     }
-    deleteOne(id) {
-        return this.userService.deleteOne(id);
+    async findOne(params) {
+        return await this.userService.findOne(params.id);
     }
-    updateOne(id, user) {
-        return this.userService.updateOne(id, user);
+    async deleteOne(id) {
+        return await this.userService.deleteOne(id);
+    }
+    async updateOne(id, user) {
+        return await this.userService.updateOne(id, user);
     }
 };
 __decorate([
@@ -41,34 +44,41 @@ __decorate([
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", rxjs_1.Observable)
+    __metadata("design:returntype", Promise)
 ], UserController.prototype, "create", null);
+__decorate([
+    common_1.Post('login'),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "login", null);
 __decorate([
     common_1.Get(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", rxjs_1.Observable)
+    __metadata("design:returntype", Promise)
 ], UserController.prototype, "findAll", null);
 __decorate([
     common_1.Get(':id'),
     __param(0, common_1.Param()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", rxjs_1.Observable)
+    __metadata("design:returntype", Promise)
 ], UserController.prototype, "findOne", null);
 __decorate([
     common_1.Delete(':id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", rxjs_1.Observable)
+    __metadata("design:returntype", Promise)
 ], UserController.prototype, "deleteOne", null);
 __decorate([
     common_1.Put(':id'),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, Object]),
-    __metadata("design:returntype", rxjs_1.Observable)
+    __metadata("design:returntype", Promise)
 ], UserController.prototype, "updateOne", null);
 UserController = __decorate([
     common_1.Controller('users'),

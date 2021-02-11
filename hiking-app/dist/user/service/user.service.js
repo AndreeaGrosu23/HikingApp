@@ -17,34 +17,111 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const rxjs_1 = require("rxjs");
+const auth_service_1 = require("../../auth/auth/services/auth.service");
 let UserService = class UserService {
-    constructor(userModel) {
+    constructor(userModel, authService) {
         this.userModel = userModel;
+        this.authService = authService;
     }
-    create(user) {
+    async create(user) {
+        const passwordHash = await this.authService.hashPassword(user.password);
         const newUser = new this.userModel({
             name: user.name,
-            username: user.username
+            username: user.username,
+            email: user.email.toLowerCase(),
+            password: passwordHash
         });
-        return rxjs_1.from(newUser.save());
+        const userDb = await newUser.save();
+        const result = {
+            id: userDb.id,
+            name: userDb.name,
+            username: userDb.username,
+            email: userDb.email
+        };
+        return result;
     }
-    findAll() {
-        return rxjs_1.from(this.userModel.find().exec());
+    async findAll() {
+        const users = await this.userModel.find().exec();
+        return users.map((user) => ({
+            id: user.id,
+            name: user.name,
+            username: user.username,
+            email: user.email
+        }));
     }
-    findOne(id) {
-        return rxjs_1.from(this.userModel.findById({ _id: id }).exec());
+    async findOne(id) {
+        let userDb;
+        let result;
+        try {
+            userDb = await this.userModel.findById({ _id: id }).exec();
+            result = {
+                id: userDb.id,
+                name: userDb.name,
+                username: userDb.username,
+                email: userDb.email
+            };
+        }
+        catch (error) {
+            throw new common_1.NotFoundException('Could not find user');
+        }
+        if (!userDb) {
+            throw new common_1.NotFoundException('Could not find user');
+        }
+        return result;
     }
-    deleteOne(id) {
-        return rxjs_1.from(this.userModel.deleteOne({ _id: id }).exec());
+    async deleteOne(id) {
+        let result;
+        try {
+            result = await this.userModel.deleteOne({ _id: id }).exec();
+        }
+        catch (error) {
+            throw new common_1.NotFoundException('Could not find hike');
+        }
+        if (result.n === 0) {
+            throw new common_1.NotFoundException('Could not find hike');
+        }
     }
-    updateOne(id, user) {
-        return rxjs_1.from(this.userModel.findByIdAndUpdate({ _id: id }, user));
+    async updateOne(id, user) {
+        delete user.email;
+        delete user.password;
+        const userDb = await this.userModel.findByIdAndUpdate({ _id: id }, user);
+        const result = {
+            id: userDb.id,
+            name: userDb.name,
+            username: userDb.username,
+            email: userDb.email
+        };
+        return result;
+    }
+    async login(user) {
+        const userValidated = await this.validateUser(user.email, user.password);
+        delete user.password;
+        if (userValidated) {
+            return await this.authService.generateJWT(user);
+        }
+        else {
+            return "Wrong credentials";
+        }
+    }
+    async validateUser(email, password) {
+        const user = await this.findByMail(email);
+        const match = await this.authService.comparePasswords(password, user.password);
+        if (match) {
+            return true;
+        }
+        else {
+            rxjs_1.throwError;
+        }
+    }
+    async findByMail(email) {
+        return await this.userModel.findOne({ email });
     }
 };
 UserService = __decorate([
     common_1.Injectable(),
     __param(0, mongoose_1.InjectModel('users')),
-    __metadata("design:paramtypes", [mongoose_2.Model])
+    __metadata("design:paramtypes", [mongoose_2.Model,
+        auth_service_1.AuthService])
 ], UserService);
 exports.UserService = UserService;
 //# sourceMappingURL=user.service.js.map

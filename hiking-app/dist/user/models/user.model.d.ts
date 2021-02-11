@@ -4,4 +4,6 @@ export interface User extends mongoose.Document {
     id?: number;
     name?: string;
     username?: string;
+    email?: string;
+    password?: string;
 }
