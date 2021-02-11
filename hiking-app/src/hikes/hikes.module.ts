@@ -6,7 +6,7 @@ import { HikesService } from './hikes.service';
 import { HikeSchema } from './hike.model';
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: 'Hike', schema: HikeSchema }])],
+  imports: [MongooseModule.forFeature([{ name: 'hikes', schema: HikeSchema }])],
   controllers: [HikesController],
   providers: [HikesService],
 })

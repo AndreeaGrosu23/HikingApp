@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "9d75e005-8e70-4071-9b30-dfab1d83e6dd",
+		"name": "HikingApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/hikes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Knutshoe\",\n    \"description\": \"Base to summit, Jotunheimen National Park\",\n    \"difficulty\": \"Moderate\",\n    \"distance\": 13,\n    \"elevation_gain\": 1300,\n    \"trail_type\": \"One way\",\n    \"image\": \"kyrkja.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/hikes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hikes"
+					]
+				},
+				"description": "Add hike"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/hikes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/hikes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hikes"
+					]
+				},
+				"description": "Find all hikes"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/hikes/6013c4107d81cd91374b2cb5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/hikes/6013c4107d81cd91374b2cb5",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hikes",
+						"6013c4107d81cd91374b2cb5"
+					]
+				},
+				"description": "Find one hike by id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/hikes/6013c3fe7d81cd91374b2cb4",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"difficulty\": \"Demanding\",\n    \"distance\": 15,\n    \"elevation_gain\": 1300\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/hikes/6013c3fe7d81cd91374b2cb4",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hikes",
+						"6013c3fe7d81cd91374b2cb4"
+					]
+				},
+				"description": "Update one hike"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/hikes/475487",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/hikes/475487",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hikes",
+						"475487"
+					]
+				},
+				"description": "Delete one hike"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Find all users"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/60242cac9cd5d4084f7523aa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/60242cac9cd5d4084f7523aa",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"60242cac9cd5d4084f7523aa"
+					]
+				},
+				"description": "Find one user by id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/60242cac9cd5d4084f7523aa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/60242cac9cd5d4084f7523aa",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"60242cac9cd5d4084f7523aa"
+					]
+				},
+				"description": "Delete user by id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/60242cac9cd5d4084f7523aa",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Andreea-Cristina\",\n    \"username\": \"AG23\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/60242cac9cd5d4084f7523aa",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"60242cac9cd5d4084f7523aa"
+					]
+				},
+				"description": "Update user by id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"hans@gmail.com\",\n    \"password\": \"0987\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Hans\",\n    \"username\": \"hans23\",\n    \"email\": \"hans@gmail.com\",\n    \"password\": \"0987\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

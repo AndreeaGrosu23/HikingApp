@@ -112,7 +112,7 @@ let HikesService = class HikesService {
 };
 HikesService = __decorate([
     common_1.Injectable(),
-    __param(0, mongoose_1.InjectModel('Hike')),
+    __param(0, mongoose_1.InjectModel('hikes')),
     __metadata("design:paramtypes", [mongoose_2.Model])
 ], HikesService);
 exports.HikesService = HikesService;

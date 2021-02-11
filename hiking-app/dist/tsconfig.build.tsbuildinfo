@@ -1607,7 +1607,7 @@
         "affectsGlobalScope": false
       },
       "../src/hikes/hikes.service.ts": {
-        "version": "a761c194a6e3efebd208413684d672be5dc0d4b41d5b942ea5b2181b82fd8a32",
+        "version": "6e3527f371e3b063f04e1a9f6906ab6296c2eb4fc7cfed7d6bb794b43ddb62d7",
         "signature": "b9b6c660534ae13ec7c2ed7f8093045b07c5533af1ede207e3708bd89b116e21",
         "affectsGlobalScope": false
       },
@@ -1617,12 +1617,82 @@
         "affectsGlobalScope": false
       },
       "../src/hikes/hikes.module.ts": {
-        "version": "ed0538a295a701fa6ff125690a36f0536be1871fb64e8465c1a0e21be4e93dc5",
+        "version": "ed136b05a126b76939ee86a796dd78dd734f9523dde2337f2be8b6b57d033072",
         "signature": "2b6da8ad931a11a8125901ef929702e223ad5c568bc3b6707c11c51df12489bc",
         "affectsGlobalScope": false
       },
+      "../src/user/models/user.model.ts": {
+        "version": "17af9473ce2a366f934e39c7606f7f286d53f09c4b5c089eeb6eac166f5821b7",
+        "signature": "a15b8c8c965cef5d8fb2e3a0b95ed8f3672f8eea3b13577bb97251473deb56d7",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/jsonwebtoken/index.d.ts": {
+        "version": "f67c920eba6ab8e4558cb9ab661d900188f101c5657e19b1e15829a1d491d46e",
+        "signature": "f67c920eba6ab8e4558cb9ab661d900188f101c5657e19b1e15829a1d491d46e",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts": {
+        "version": "fc0140cf41d169b3b77e09831c9d2eed1cdb131aa34f4fa27e4c01896ec97ad6",
+        "signature": "fc0140cf41d169b3b77e09831c9d2eed1cdb131aa34f4fa27e4c01896ec97ad6",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts": {
+        "version": "7c14e702387296711c1a829bc95052ff02f533d4aa27d53cc0186c795094a3a9",
+        "signature": "7c14e702387296711c1a829bc95052ff02f533d4aa27d53cc0186c795094a3a9",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts": {
+        "version": "579f8828da42ae02db6915a0223d23b0da07157ff484fecdbf8a96fffa0fa4df",
+        "signature": "579f8828da42ae02db6915a0223d23b0da07157ff484fecdbf8a96fffa0fa4df",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts": {
+        "version": "d1e16a1778a336ae49607ca0becd8688e74a020bea949047dcfcbb1bd2dc0f5a",
+        "signature": "d1e16a1778a336ae49607ca0becd8688e74a020bea949047dcfcbb1bd2dc0f5a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/index.d.ts": {
+        "version": "a13aac535101a942283e3d00bce50f483bfa9bed6e1f8dfda33a3bb072498776",
+        "signature": "a13aac535101a942283e3d00bce50f483bfa9bed6e1f8dfda33a3bb072498776",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/index.d.ts": {
+        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/bcrypt/index.d.ts": {
+        "version": "18b9a9702d2fc7d3766b0c8124133c761ad25a9d767925005777eb2c2cd8aeba",
+        "signature": "18b9a9702d2fc7d3766b0c8124133c761ad25a9d767925005777eb2c2cd8aeba",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/auth/services/auth.service.ts": {
+        "version": "d487e093b336cbbf59712e234260330b9e7d68bbef2051bf8b767d565dee7ec4",
+        "signature": "1e2237a2f20acd801c48ae0dee120c4d13d09fa18e2252d68a4b1c63ec304633",
+        "affectsGlobalScope": false
+      },
+      "../src/user/service/user.service.ts": {
+        "version": "666d36499088d4844a29bebb8f572f16ec0d69ba8b76709ee01dbfa8aa8df56e",
+        "signature": "db336132773b28259a018ebf3069ce7d8c32a785dc02414eacf36d0c7f861556",
+        "affectsGlobalScope": false
+      },
+      "../src/user/controller/user.controller.ts": {
+        "version": "1f485c06936c60fadc14c949c3204037cdfd8d24da37e5928a3b306d6e0d2aab",
+        "signature": "4649e01d7af2f54de98a60fb8682121bbc35816653d0abf676e0c808674da6bc",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/auth.module.ts": {
+        "version": "5fe71326a45bf4b94b8539314aa340bc298c79614e65b44ed438c8f3ddf06623",
+        "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1",
+        "affectsGlobalScope": false
+      },
+      "../src/user/user.module.ts": {
+        "version": "21d9604631e15b0572c93770480d341e4591889fdb4bf3a37591bb3c93eeeb60",
+        "signature": "482b8f0d35a3d453500a15b6c6057c1e4c40baa4329b39da9e1026d8e1de4329",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "5751327e0a3c849b69ec7a01938804dd122dc25f9c333d1ecccab18d9be0d258",
+        "version": "3e4fff03bf492e66f6b42a22086edd654d24bd5f0a1e6e3f27ac526ef5807379",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -2797,6 +2867,31 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
       ],
+      "../node_modules/@nestjs/jwt/dist/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts",
+        "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
+        "../node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/index.d.ts"
+      ],
       "../node_modules/@nestjs/mongoose/dist/common/index.d.ts": [
         "../node_modules/@nestjs/mongoose/dist/common/mongoose.decorators.d.ts",
         "../node_modules/@nestjs/mongoose/dist/common/mongoose.utils.d.ts"
@@ -2930,6 +3025,9 @@
       "../node_modules/@types/jest/index.d.ts": [
         "../node_modules/jest-diff/build/index.d.ts",
         "../node_modules/pretty-format/build/index.d.ts"
+      ],
+      "../node_modules/@types/jsonwebtoken/index.d.ts": [
+        "../node_modules/@types/node/index.d.ts"
       ],
       "../node_modules/@types/mongodb/index.d.ts": [
         "../node_modules/@types/bson/index.d.ts",
@@ -3541,10 +3639,25 @@
         "../node_modules/@nestjs/mongoose/index.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
-        "../src/hikes/hikes.module.ts"
+        "../src/auth/auth.module.ts",
+        "../src/hikes/hikes.module.ts",
+        "../src/user/user.module.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/auth/auth.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/config/index.d.ts",
+        "../node_modules/@nestjs/jwt/index.d.ts",
+        "../src/auth/auth/services/auth.service.ts"
+      ],
+      "../src/auth/auth/services/auth.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/jwt/index.d.ts",
+        "../node_modules/@types/bcrypt/index.d.ts",
+        "../node_modules/rxjs/index.d.ts",
+        "../src/user/models/user.model.ts"
       ],
       "../src/hikes/hike.model.ts": [
         "../node_modules/mongoose/index.d.ts"
@@ -3569,6 +3682,32 @@
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
         "../src/app.module.ts"
+      ],
+      "../src/user/controller/user.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/rxjs/index.d.ts",
+        "../src/user/models/user.model.ts",
+        "../src/user/service/user.service.ts"
+      ],
+      "../src/user/models/user.model.ts": [
+        "../node_modules/@types/node/fs/promises.d.ts",
+        "../node_modules/mongoose/index.d.ts"
+      ],
+      "../src/user/service/user.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/mongoose/index.d.ts",
+        "../node_modules/mongoose/index.d.ts",
+        "../node_modules/rxjs/index.d.ts",
+        "../src/auth/auth/services/auth.service.ts",
+        "../src/user/models/user.model.ts"
+      ],
+      "../src/user/user.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/mongoose/index.d.ts",
+        "../src/auth/auth.module.ts",
+        "../src/user/controller/user.controller.ts",
+        "../src/user/models/user.model.ts",
+        "../src/user/service/user.service.ts"
       ]
     },
     "exportedModulesMap": {
@@ -4232,6 +4371,31 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
       ],
+      "../node_modules/@nestjs/jwt/dist/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts",
+        "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
+        "../node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/index.d.ts"
+      ],
       "../node_modules/@nestjs/mongoose/dist/common/index.d.ts": [
         "../node_modules/@nestjs/mongoose/dist/common/mongoose.decorators.d.ts",
         "../node_modules/@nestjs/mongoose/dist/common/mongoose.utils.d.ts"
@@ -4365,6 +4529,9 @@
       "../node_modules/@types/jest/index.d.ts": [
         "../node_modules/jest-diff/build/index.d.ts",
         "../node_modules/pretty-format/build/index.d.ts"
+      ],
+      "../node_modules/@types/jsonwebtoken/index.d.ts": [
+        "../node_modules/@types/node/index.d.ts"
       ],
       "../node_modules/@types/mongodb/index.d.ts": [
         "../node_modules/@types/bson/index.d.ts",
@@ -4969,6 +5136,10 @@
       "../src/app.controller.ts": [
         "../src/app.service.ts"
       ],
+      "../src/auth/auth/services/auth.service.ts": [
+        "../node_modules/@nestjs/jwt/index.d.ts",
+        "../src/user/models/user.model.ts"
+      ],
       "../src/hikes/hike.model.ts": [
         "../node_modules/mongoose/index.d.ts"
       ],
@@ -4978,6 +5149,18 @@
       "../src/hikes/hikes.service.ts": [
         "../node_modules/mongoose/index.d.ts",
         "../src/hikes/hike.model.ts"
+      ],
+      "../src/user/controller/user.controller.ts": [
+        "../src/user/models/user.model.ts",
+        "../src/user/service/user.service.ts"
+      ],
+      "../src/user/models/user.model.ts": [
+        "../node_modules/mongoose/index.d.ts"
+      ],
+      "../src/user/service/user.service.ts": [
+        "../node_modules/mongoose/index.d.ts",
+        "../src/auth/auth/services/auth.service.ts",
+        "../src/user/models/user.model.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -5169,6 +5352,12 @@
       "../node_modules/@nestjs/core/router/request/request-constants.d.ts",
       "../node_modules/@nestjs/core/services/index.d.ts",
       "../node_modules/@nestjs/core/services/reflector.service.d.ts",
+      "../node_modules/@nestjs/jwt/dist/index.d.ts",
+      "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts",
+      "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
+      "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts",
+      "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts",
+      "../node_modules/@nestjs/jwt/index.d.ts",
       "../node_modules/@nestjs/mongoose/dist/common/index.d.ts",
       "../node_modules/@nestjs/mongoose/dist/common/mongoose.decorators.d.ts",
       "../node_modules/@nestjs/mongoose/dist/common/mongoose.utils.d.ts",
@@ -5194,6 +5383,7 @@
       "../node_modules/@types/babel__generator/index.d.ts",
       "../node_modules/@types/babel__template/index.d.ts",
       "../node_modules/@types/babel__traverse/index.d.ts",
+      "../node_modules/@types/bcrypt/index.d.ts",
       "../node_modules/@types/body-parser/index.d.ts",
       "../node_modules/@types/bson/index.d.ts",
       "../node_modules/@types/connect/index.d.ts",
@@ -5211,6 +5401,7 @@
       "../node_modules/@types/jest/index.d.ts",
       "../node_modules/@types/json-schema/index.d.ts",
       "../node_modules/@types/json5/index.d.ts",
+      "../node_modules/@types/jsonwebtoken/index.d.ts",
       "../node_modules/@types/mime/index.d.ts",
       "../node_modules/@types/mongodb/index.d.ts",
       "../node_modules/@types/node/assert.d.ts",
@@ -5400,11 +5591,17 @@
       "../src/app.controller.ts",
       "../src/app.module.ts",
       "../src/app.service.ts",
+      "../src/auth/auth.module.ts",
+      "../src/auth/auth/services/auth.service.ts",
       "../src/hikes/hike.model.ts",
       "../src/hikes/hikes.controller.ts",
       "../src/hikes/hikes.module.ts",
       "../src/hikes/hikes.service.ts",
-      "../src/main.ts"
+      "../src/main.ts",
+      "../src/user/controller/user.controller.ts",
+      "../src/user/models/user.model.ts",
+      "../src/user/service/user.service.ts",
+      "../src/user/user.module.ts"
     ]
   },
   "version": "4.1.3"
