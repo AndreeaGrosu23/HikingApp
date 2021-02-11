@@ -29,14 +29,16 @@ let UserService = class UserService {
             name: user.name,
             username: user.username,
             email: user.email.toLowerCase(),
-            password: passwordHash
+            password: passwordHash,
+            role: user.role
         });
         const userDb = await newUser.save();
         const result = {
             id: userDb.id,
             name: userDb.name,
             username: userDb.username,
-            email: userDb.email
+            email: userDb.email,
+            role: userDb.role
         };
         return result;
     }
@@ -46,7 +48,8 @@ let UserService = class UserService {
             id: user.id,
             name: user.name,
             username: user.username,
-            email: user.email
+            email: user.email,
+            role: user.role
         }));
     }
     async findOne(id) {
@@ -58,7 +61,8 @@ let UserService = class UserService {
                 id: userDb.id,
                 name: userDb.name,
                 username: userDb.username,
-                email: userDb.email
+                email: userDb.email,
+                role: userDb.role
             };
         }
         catch (error) {
@@ -75,21 +79,22 @@ let UserService = class UserService {
             result = await this.userModel.deleteOne({ _id: id }).exec();
         }
         catch (error) {
-            throw new common_1.NotFoundException('Could not find hike');
+            throw new common_1.NotFoundException('Could not find user');
         }
         if (result.n === 0) {
-            throw new common_1.NotFoundException('Could not find hike');
+            throw new common_1.NotFoundException('Could not find user');
         }
     }
     async updateOne(id, user) {
         delete user.email;
         delete user.password;
-        const userDb = await this.userModel.findByIdAndUpdate({ _id: id }, user);
+        const userDb = await this.userModel.findByIdAndUpdate(id, user);
         const result = {
             id: userDb.id,
             name: userDb.name,
             username: userDb.username,
-            email: userDb.email
+            email: userDb.email,
+            role: userDb.role
         };
         return result;
     }
@@ -115,6 +120,11 @@ let UserService = class UserService {
     }
     async findByMail(email) {
         return await this.userModel.findOne({ email });
+    }
+    async updateRoleOfUser(id, user) {
+        delete user.email;
+        delete user.password;
+        return await this.userModel.findByIdAndUpdate(id, user);
     }
 };
 UserService = __decorate([

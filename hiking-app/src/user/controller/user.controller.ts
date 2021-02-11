@@ -1,6 +1,9 @@
-import { Body, Controller, Delete, Post, Get, Param, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Post, Get, Param, Put, UseGuards } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { User } from '../models/user.model';
+import { hasRoles } from 'src/auth/decorator/roles.decorator';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-guard';
+import { RolesGuard } from 'src/auth/guards/roles.guard';
+import { User, UserRole } from '../models/user.model';
 import { UserService } from '../service/user.service';
 
 @Controller('users')
@@ -18,6 +21,8 @@ export class UserController {
         return { access_token: jwt };
     }
 
+    @hasRoles(UserRole.ADMIN)
+    @UseGuards(JwtAuthGuard, RolesGuard)
     @Get()
     async findAll() {
         return await this.userService.findAll();
@@ -34,8 +39,15 @@ export class UserController {
     }
 
     @Put(':id')
-    async updateOne(@Param('id') id: number, @Body() user: User): Promise<any> {
+    async updateOne(@Param('id') id: string, @Body() user: User): Promise<any> {
         return await this.userService.updateOne(id, user);
+    }
+
+    @hasRoles(UserRole.ADMIN)
+    @UseGuards(JwtAuthGuard, RolesGuard)
+    @Put(':id/role')
+    async updateRoleOfUser(@Param('id') id: string, @Body() user: User): Promise<User> {
+        return await this.userService.updateRoleOfUser(id, user);
     }
 
 }

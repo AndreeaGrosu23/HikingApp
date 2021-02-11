@@ -11,11 +11,13 @@ export declare class UserService {
         name: string;
         username: string;
         email: string;
+        role: import("../models/user.model").UserRole;
     }[]>;
     findOne(id: number): Promise<any>;
     deleteOne(id: number): Promise<any>;
-    updateOne(id: number, user: User): Promise<any>;
+    updateOne(id: string, user: User): Promise<any>;
     login(user: User): Promise<string>;
     validateUser(email: string, password: string): Promise<boolean>;
     findByMail(email: string): Promise<User>;
+    updateRoleOfUser(id: string, user: User): Promise<User>;
 }

@@ -14,6 +14,10 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
+const roles_decorator_1 = require("../../auth/decorator/roles.decorator");
+const jwt_guard_1 = require("../../auth/guards/jwt-guard");
+const roles_guard_1 = require("../../auth/guards/roles.guard");
+const user_model_1 = require("../models/user.model");
 const user_service_1 = require("../service/user.service");
 let UserController = class UserController {
     constructor(userService) {
@@ -38,6 +42,9 @@ let UserController = class UserController {
     async updateOne(id, user) {
         return await this.userService.updateOne(id, user);
     }
+    async updateRoleOfUser(id, user) {
+        return await this.userService.updateRoleOfUser(id, user);
+    }
 };
 __decorate([
     common_1.Post(),
@@ -54,6 +61,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "login", null);
 __decorate([
+    roles_decorator_1.hasRoles(user_model_1.UserRole.ADMIN),
+    common_1.UseGuards(jwt_guard_1.JwtAuthGuard, roles_guard_1.RolesGuard),
     common_1.Get(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
@@ -77,9 +86,18 @@ __decorate([
     common_1.Put(':id'),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, Object]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "updateOne", null);
+__decorate([
+    roles_decorator_1.hasRoles(user_model_1.UserRole.ADMIN),
+    common_1.UseGuards(jwt_guard_1.JwtAuthGuard, roles_guard_1.RolesGuard),
+    common_1.Put(':id/role'),
+    __param(0, common_1.Param('id')), __param(1, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "updateRoleOfUser", null);
 UserController = __decorate([
     common_1.Controller('users'),
     __metadata("design:paramtypes", [user_service_1.UserService])

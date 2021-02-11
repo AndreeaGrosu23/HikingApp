@@ -1,4 +1,4 @@
-import { User } from '../models/user.model';
+import { User, UserRole } from '../models/user.model';
 import { UserService } from '../service/user.service';
 export declare class UserController {
     private userService;
@@ -10,8 +10,10 @@ export declare class UserController {
         name: string;
         username: string;
         email: string;
+        role: UserRole;
     }[]>;
     findOne(params: any): Promise<any>;
     deleteOne(id: number): Promise<any>;
-    updateOne(id: number, user: User): Promise<any>;
+    updateOne(id: string, user: User): Promise<any>;
+    updateRoleOfUser(id: string, user: User): Promise<User>;
 }
