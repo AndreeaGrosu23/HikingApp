@@ -1,5 +1,4 @@
 import { Body, Controller, Delete, Post, Get, Param, Put, UseGuards } from '@nestjs/common';
-import { Observable } from 'rxjs';
 import { hasRoles } from 'src/auth/decorator/roles.decorator';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-guard';
 import { RolesGuard } from 'src/auth/guards/roles.guard';

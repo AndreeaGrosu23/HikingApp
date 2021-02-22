@@ -1967,7 +1967,7 @@
         "affectsGlobalScope": false
       },
       "../src/user/controller/user.controller.ts": {
-        "version": "ab16b874b4160b41c3c54019f09914949bd135ecc995cc99f3e255bac8b520e1",
+        "version": "301a7673043ad84ee6eb119c7270fadfcbd2b1b5eb7a54d90620f82508273387",
         "signature": "57ea0a23d1275405d46e37119df4029d48466a5ff2ec229f946b491e3de62de6",
         "affectsGlobalScope": false
       },
@@ -2002,7 +2002,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "e25d9bd8f80b6ffbcc8826ed1b407e747e4fbe346c5bab62cbe5837da4eeb189",
+        "version": "939a8ff9d3b4b090cea07fdd2da84bd7782587317f3824608abba86c1a539f41",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
@@ -3849,7 +3849,6 @@
       ],
       "../src/user/controller/user.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/rxjs/index.d.ts",
         "../src/auth/decorator/roles.decorator.ts",
         "../src/auth/guards/jwt-guard.ts",
         "../src/auth/guards/roles.guard.ts",
