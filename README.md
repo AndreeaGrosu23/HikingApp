@@ -1,6 +1,6 @@
 # HikingApp
 
-Backend with NestJS and MongoDB( +Mongoose as ODM) of a web app where you can add hikes and browse the existing ones. Contains user feature protected with JWT.
+Backend with NestJS and MongoDB( +Mongoose as ODM) of a web app where you can add hikes and browse the existing ones. Contains user feature protected with JWT. Frontend with Angular.
 ## 1.Switch to branch develop for the latest updates
 
 ## 2.Add an environment file to the project
