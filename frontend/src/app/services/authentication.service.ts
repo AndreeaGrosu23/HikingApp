@@ -3,6 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { from } from 'rxjs';
 
+export interface User {
+  name?: string;
+  username?: string;
+  email?: string;
+  password?: string;
+  passwordConfirm?: string;
+}
 export interface LoginForm {
   email: string;
   password: string;
@@ -22,6 +29,12 @@ export class AuthenticationService {
         localStorage.setItem('jwt-token', token.access_token);
         return token;
       })
+    )
+  }
+
+  register(user) {
+    return this.http.post<any>('/api/users/', user).pipe(
+      map(user => user)
     )
   }
 }
