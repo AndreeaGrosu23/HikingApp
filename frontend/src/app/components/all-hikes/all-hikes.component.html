@@ -1,0 +1,19 @@
+<div style="width: 50%; margin-left: 25%;">
+    <mat-card *ngFor="let hike of dataSource" style="margin-top: 15px;">
+        <div>
+            {{hike.title}}
+        </div>
+        <div>
+            {{hike.description}}
+        </div>
+        <div>
+            {{hike.difficulty}}
+        </div>
+        <div>
+            {{hike.distance}}
+        </div>
+        <div>
+            {{hike.elevation_gain}}
+        </div>
+    </mat-card>
+</div>

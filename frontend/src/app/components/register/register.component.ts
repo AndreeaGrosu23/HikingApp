@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { map } from 'rxjs/operators';
 
 class CustomValidators {

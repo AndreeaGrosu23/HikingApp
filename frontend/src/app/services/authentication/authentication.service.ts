@@ -25,7 +25,6 @@ export class AuthenticationService {
 
     return from(this.http.post<any>('/api/users/login', {email: loginForm.email, password: loginForm.password})).pipe(
       map((token) => {
-        console.log(token);
         localStorage.setItem('jwt-token', token.access_token);
         return token;
       })
