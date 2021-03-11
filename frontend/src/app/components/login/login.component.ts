@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-login',
@@ -32,12 +32,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("working");
     if (this.loginForm.invalid) {
       return;
     }
     this.authService.login(this.loginForm.value).pipe(
-      map(token => this.router.navigate(['admin']))
+      map(token => this.router.navigate(['home']))
     ).subscribe();
   }
 
