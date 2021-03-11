@@ -1,0 +1,30 @@
+<form [formGroup]="form" (ngSubmit)="post()">
+    <div>
+        <mat-card class="container" >
+            <div class="container">
+                <mat-form-field>
+                    <input matInput placeholder="Title" formControlName="title">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Description" formControlName="description">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Difficulty" formControlName="difficulty">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Distance" formControlName="distance">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Elevation gain" formControlName="elevation_gain">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Trail type" formControlName="trail_type">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Image" formControlName="image">
+                </mat-form-field>
+            </div>
+            <button mat-flat-button color="primary" [disabled]="form.invalid" type="submit">Add hike</button>
+        </mat-card>
+    </div>
+</form>

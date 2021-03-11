@@ -36,4 +36,8 @@ export class AuthenticationService {
       map(user => user)
     )
   }
+
+  logout() {
+    localStorage.removeItem('jwt-token');
+  }
 }
