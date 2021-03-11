@@ -2,8 +2,17 @@
     <mat-toolbar-row>
         <span routerLink="/home" class="home-link">Hiking App</span>
         <span class="example-spacer"></span>
-        <button mat-flat-button routerLink="/login">Login</button>
+        <button mat-flat-button routerLink="/add-hike">Add hike</button>
+        <button mat-flat-button routerLink="/login" style="margin-left: 20px;">Login</button>
         <button mat-flat-button style="margin-left: 20px;" routerLink="/register">Register</button>
+        <button mat-flat-button style="margin-left: 20px;" (click)="logout()">Logout</button>
+        <!-- <mat-form-field style="margin-left: 20px;" name="loginRegisterDropdown">
+            <mat-select placeholder="Login">
+                <mat-option (click)="navigateTo('login')">Login</mat-option>
+                <mat-option (click)="navigateTo('register')">Register</mat-option>                
+                <mat-option (click)="logout()">Logout</mat-option>
+            </mat-select>
+        </mat-form-field> -->
     </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>

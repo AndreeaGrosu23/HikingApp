@@ -16,6 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './components/home/home.component';
 import { AllHikesComponent } from './components/all-hikes/all-hikes.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { AddHikeComponent } from './components/add-hike/add-hike.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { MatCardModule } from '@angular/material/card';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    AllHikesComponent
+    AllHikesComponent,
+    AddHikeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { MatCardModule } from '@angular/material/card';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
