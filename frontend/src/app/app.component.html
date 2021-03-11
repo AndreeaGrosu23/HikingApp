@@ -1,10 +1,9 @@
 <mat-toolbar color="primary">   
     <mat-toolbar-row>
-        <span>Hiking App</span>
+        <span routerLink="/home" class="home-link">Hiking App</span>
         <span class="example-spacer"></span>
-        <a routerLink = "/login">Login</a>
-        <a routerLink = "/register">Register</a>
-        <a routerLink = "/admin">Admin</a>
+        <button mat-flat-button routerLink="/login">Login</button>
+        <button mat-flat-button style="margin-left: 20px;" routerLink="/register">Register</button>
     </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>
